@@ -19,7 +19,9 @@
   "homepage": "https://github.com/Shivachauhan17/learning_graph_ql#readme",
   "dependencies": {
     "@apollo/server": "^4.10.3",
+    "dotenv": "^16.4.5",
     "graphql": "^16.8.1",
+    "mongoose": "^8.3.2",
     "uuid": "^9.0.1"
   }
 }
