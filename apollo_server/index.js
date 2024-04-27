@@ -6,11 +6,12 @@ const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
 mongoose.set('strictQuery', false)
 const Person = require('./models/person')
+const User=require('./models/user')
 
 require('dotenv').config()
 
 
-const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = process.env.DB_STRING
 
 console.log('connecting to', MONGODB_URI)
 
@@ -207,6 +208,7 @@ const resolvers={
       },
 
       createUser:async(root,args)=>{
+        console.log(args)
         const user = new User({ username: args.username })
         return user.save()
                     .catch(error=>{

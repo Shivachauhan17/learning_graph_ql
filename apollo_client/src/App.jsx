@@ -3,6 +3,7 @@ import Persons from './Persons'
 import {gql,useQuery} from '@apollo/client'
 import Mutation from './Mutation'
 import {Routes,Route,BrowserRouter} from "react-router-dom"
+import Login from './Login'
 
 const ALL_PERSONS = gql`
 query {
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Mutation/>}/>
           <Route path='/persons' element={<Persons persons={result.data.allPersons}/>}/>
+          <Route path='/login' element={<Login/>} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -34,3 +36,5 @@ function App() {
 }
 
 export default App
+
+
